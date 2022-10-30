@@ -1,5 +1,5 @@
 import {useState,useEffect} from "react";
-import Btn from "./button";
+// import Btn from "./button";
 import styles from "./App.module.css";
 
 function App() {
@@ -11,12 +11,15 @@ function App() {
     }
 
     console.log("init");
+    //로딩시 1번 실행
     useEffect(() => {
         console.log('init once!');
     },[]);
-    useEffect(()=>{
 
-    });
+    //키워드값의 변화가 있을때만 실행
+    useEffect(()=>{
+        console.log("search keyword",keyword);
+    },[keyword]);
 
     return (
       <div>

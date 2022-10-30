@@ -20,5 +20,9 @@ useState와 같이 import 해준 뒤 첫번째 인수로 한번만 실행시킬 
 
 ```jsx
 import {useEffect} from "react";
-useEffect(()=> console.log('only once!'));
+useEffect(()=> console.log('only once!'),[]);
+
+//두번째 인수로 useState 값을 넣으면 값이 변경 될때 렌더링 되도록 처리해 줄수 있다.
+const [value, setValue] = useState(0);
+useEffect(()=> console.log('hi!'),[value]);
 ```
