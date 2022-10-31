@@ -26,3 +26,14 @@ useEffect(()=> console.log('only once!'),[]);
 const [value, setValue] = useState(0);
 useEffect(()=> console.log('hi!'),[value]);
 ```
+
+> useEffect를 사용할때 return에 반환할 함수나 코드를 작성하면 destroy 시 return이 실행된다.
+```js
+useEffect(()=>{
+    //create
+    console.log('hi!');
+
+    //destroy
+    return console.log('bye');
+},[]);
+```
